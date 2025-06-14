@@ -1,91 +1,138 @@
 # Speeding Fines Australia (2023) 🚗📊  
 [![Build](https://img.shields.io/badge/status-live-brightgreen)](../../branches)  
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)  
-[![Made with D3](https://img.shields.io/badge/made%20with-D3.js-f06666)](https://d3js.org/)  
+[![Made with D3](https://img.shields.io/badge/made%20with-D3.js-f06666)](https://d3js.org/)
 
-> **An interactive web dashboard revealing patterns in speeding fines across Australian states and territories in 2023. Built with D3.js and deployed via AWS.**
-
----
-
-## 📷 Dashboard Preview
-
-### Left Half – Overview and Key Metrics
-<p align="center">
-  <img src="images/dashboard-overview.png" width="750" alt="Overview section of the speeding fines dashboard">
-</p>
-
-### Right Half – Deep Dive and Charts
-<p align="center">
-  <img src="images/dashboard-details.png" width="750" alt="Detail view showing charts and interactions">
-</p>
+> **An interactive web dashboard visualizing speeding fine statistics across Australian states in 2023. Built with D3.js, hosted on AWS S3, and powered by KNIME for data preprocessing.**
 
 ---
 
-## 🧼 Data Cleaning & Transformation with KNIME
+## 📊 Project Overview
 
-Before building the dashboard, the raw dataset was cleaned and transformed using **KNIME Analytics Platform**.
+This dashboard explores when, where, and how Australians were fined for speeding during 2023. It aims to help users:
 
-### Workflow Example – Initial Preprocessing
+- Understand monthly and regional variations in fine counts
+- Compare detection methods (e.g., camera vs police-issued)
+- Explore demographics such as age group distributions
+- Visualize jurisdictional enforcement through charts and maps
+
+The data was sourced from the Australian Government and processed in KNIME to produce clean, standardized CSV and JSON files for D3.js visualizations.
+
+---
+
+## 🌐 Live Dashboard
+
+▶ **[View the live dashboard](https://web-dashboard-speeding-fines-2023-australia.s3.ap-southeast-2.amazonaws.com/index.html)**  
+> Hosted using Amazon S3. No backend or build step required.
+
+---
+
+## 🖼️ Dashboard Screenshots
+
+### Home Page – Project Introduction
 <p align="center">
-  <img src="images/knime-cleaning-flow.png" width="700" alt="KNIME workflow showing data filtering and cleanup">
+  <img src="images/homepage.png" width="850" alt="Home Page">
 </p>
 
-### Workflow Example – Aggregation and Export
+### Monthly Trends & Detection Methods
 <p align="center">
-  <img src="images/knime-export-flow.png" width="700" alt="KNIME data aggregation and output logic">
+  <img src="images/dashboard-part1.png" width="850" alt="Detection Method and KPI Summary">
+</p>
+
+### Age Group & Jurisdiction Breakdown
+<p align="center">
+  <img src="images/dashboard-part2.png" width="850" alt="Demographics and Jurisdiction Charts">
 </p>
 
 ---
 
-## ✨ Key Insights from the Dashboard
+## 🧼 KNIME Workflows – Data Cleaning & Transformation
 
-| Insight               | Example                                      |
-|-----------------------|----------------------------------------------|
-| **Monthly Trends**     | Detect fine spikes in peak periods (e.g., Dec) |
-| **By Jurisdiction**    | Compare VIC, NSW, QLD fine patterns           |
-| **Detection Methods**  | Explore use of mobile/fixed cameras vs radar |
-| **Demographics**       | Analyze patterns by age and driver types      |
-| **Location Types**     | Understand trends in urban, rural, or school zones |
+The dataset required jurisdiction-specific cleaning due to inconsistencies in format and missing values. KNIME was used to clean, aggregate, and join the data across age groups, months, and detection methods.
+
+### QLD Workflow
+<p align="center">
+  <img src="images/knime-qld.png" width="850" alt="KNIME Workflow for QLD">
+</p>
+
+### ACT Workflow
+<p align="center">
+  <img src="images/knime-act.png" width="850" alt="KNIME Workflow for ACT">
+</p>
+
+### NSW Workflow
+<p align="center">
+  <img src="images/knime-nsw.png" width="850" alt="KNIME Workflow for NSW">
+</p>
+
+### NT Workflow
+<p align="center">
+  <img src="images/knime-nt.png" width="850" alt="KNIME Workflow for NT">
+</p>
+
+### SA Workflow
+<p align="center">
+  <img src="images/knime-sa.png" width="850" alt="KNIME Workflow for SA">
+</p>
+
+### TAS Workflow
+<p align="center">
+  <img src="images/knime-tas.png" width="850" alt="KNIME Workflow for TAS">
+</p>
+
+### VIC Workflow
+<p align="center">
+  <img src="images/knime-vic.png" width="850" alt="KNIME Workflow for VIC">
+</p>
+
+### WA Workflow
+<p align="center">
+  <img src="images/knime-wa.png" width="850" alt="KNIME Workflow for WA">
+</p>
+
+### Final Output Pipeline – Exporting Cleaned Files
+<p align="center">
+  <img src="images/knime-final-output.png" width="850" alt="KNIME Final Export">
+</p>
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer       | Tools                                           |
-|-------------|-------------------------------------------------|
-| Front-End   | **HTML · Modular CSS · JavaScript**             |
-| Visualization | **D3.js v7**                                 |
-| Hosting     | **Amazon S3 (Static Website Hosting)**          |
-| ETL / Cleaning | **KNIME Analytics Platform**               |
-| Data Source | [BITRE Road Safety Enforcement Data (2024)](https://www.bitre.gov.au/publications/2024/road-safety-enforcement-data) |
+| Layer           | Tools & Technologies                              |
+|------------------|----------------------------------------------------|
+| Front-End        | HTML5, CSS3, JavaScript                           |
+| Visualizations   | D3.js v7                                           |
+| Hosting          | Amazon S3 (static website)                        |
+| ETL & Cleaning   | KNIME Analytics Platform                          |
+| Data Source      | [BITRE Enforcement Data, 2024](https://www.bitre.gov.au/publications/2024/road-safety-enforcement-data) |
 
 ---
 
-## 📁 Project Structure
+## 📁 Repository Structure
 
-| File / Folder            | Description                                  |
-|--------------------------|----------------------------------------------|
-| `index.html`             | Main HTML file                                |
-| `css/`                   | Layout-specific stylesheets                   |
-| `js/`                    | D3 visual logic (bar, map, filters, etc.)     |
-| `data/`                  | Cleaned datasets in CSV and JSON formats      |
-| `images/`                | Visual assets and screenshots                 |
-| `.vscode/`               | Editor configuration (optional)               |
-
----
-
-## 🚀 Live Demo
-
-📍 **[Launch Dashboard](https://web-dashboard-speeding-fines-2023-australia.s3.ap-southeast-2.amazonaws.com/index.html)**  
-> Fully deployed to AWS S3. No build or backend required — just static files.
+| Folder / File         | Description                                     |
+|------------------------|-------------------------------------------------|
+| `index.html`           | Main entry page                                 |
+| `css/`                 | Layout and visual styling                       |
+| `js/`                  | D3.js chart logic and data handlers             |
+| `data/`                | Preprocessed CSV/JSON files                     |
+| `images/`              | Dashboard screenshots and KNIME workflows       |
+| `.vscode/`             | Optional VS Code settings                       |
 
 ---
 
-## 🧑‍💻 Run Locally (2 mins)
+## 🧑‍💻 Running Locally
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/speeding-fines-australia-2023.git
+# Clone this repository
+git clone https://github.com/melvin0108/Web-Dashboard-Speeding-Fines-2023-Australia.git
 
-# Open the folder in VS Code
-# Run using Live Server (needed for loading local CSV files via XHR)
+# Navigate into the project directory
+cd Web-Dashboard-Speeding-Fines-2023-Australia
+
+# Open with VS Code
+code .
+
+# Launch index.html using Live Server
+# (Right-click → 'Open with Live Server' OR run from extensions panel)
