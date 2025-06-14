@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Safe Roads Initiative</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/visualisation.css">
+  <link rel="stylesheet" type="text/css" href="css/layout-row1.css">
+  <link rel="stylesheet" type="text/css" href="css/layout-row2.css">
+  <link rel="stylesheet" type="text/css" href="css/layout-row3.css">
+  <link rel="stylesheet" type="text/css" href="css/home.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <img src="images/banh-mi-ram-ram.jpg" alt="Australian Government" id="logo" onclick="navigateTo('home')">
+      <ul class="nav-links">
+        <li><a href="#" onclick="navigateTo('home')">HOME</a></li>
+        <li><a href="#" onclick="navigateTo('speeding')">VISUALISATIONS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section id="home-section">
+      <h1 style="font-style: italic; font-size: xx-large;">WELCOME TO THE BANH MI RAM RAM FIRM</h1><br><br>
+      <div class="team">
+        <div class="member">
+          <img src="images/anne.jpg" alt="Anne">
+          <p>Anne – Data Wrangler</p>
+        </div>
+        <div class="member">
+          <img src="images/melvin.jpg" alt="Melvin">
+          <p>Melvin – Visualisation Lead</p>
+        </div>
+      </div>
+      <br>
+      <p>This platform presents:</p>
+      <ul>
+        <li>The distribution of speeding fines across Australia, highlighting variations by region and changes over time</li>
+        <li>Key trends across different jurisdictions and offers a closer look at how fines relate to demographic factors</li>
+        <li>The goal is to support a clearer understanding of how speeding regulations are enforced and who is most affected</li>
+      </ul>
+      <br>
+      <div class="disclaimer">
+        <p style="font-style: italic; text-decoration: underline;">Disclaimer: </p>
+        <p>The data visualised in this project is limited to speeding-related metrics and exclusively covers the year 2023.</p>
+        <p>QLD only provides yearly data. Therefore, in the line chart, the total number of QLD fines is evenly divided into 12 parts, with each part representing one month.</p>
+      </div>
+    </section>
+
+    <section id="speeding-section" class="hidden">
+
+      <h1 style="font-style: italic; font-size: xx-large;">SPEEDING FINES VISUALISATIONS, 2023</h1>
+      <br><br>
+      <div class="container">
+        
+        <div class="row1">
+          <div class="col col-card">
+            <div id="-jurisdictionslicer" style="background-color: #d6cecd">
+              <div class="slicer-title" style="font-size: large; padding-bottom: 10px; padding-top: 10px;">Select Jurisdiction</div>
+                <details id="jurisdiction-filter">
+                  <summary>All</summary>
+                  <div id="jur-list">
+                    <label><input type="checkbox" value="All" checked> All</label>
+                    <label><input type="checkbox" value="New South Wales" checked> New South Wales</label>
+                    <label><input type="checkbox" value="Victoria" checked> Victoria</label>
+                    <label><input type="checkbox" value="Queensland" checked> Queensland</label>
+                    <label><input type="checkbox" value="South Australia" checked> South Australia</label>
+                    <label><input type="checkbox" value="Western Australia" checked> Western Australia</label>
+                    <label><input type="checkbox" value="Tasmania" checked> Tasmania</label>
+                    <label><input type="checkbox" value="Northern Territory" checked> Northern Territory</label>
+                    <label><input type="checkbox" value="Australian Capital Territory" checked> Australian Capital Territory</label>
+                  </div>
+                </details>
+            </div>
+            <br>
+            <div class="responsive-svg-container card-container">
+              <div id="card"></div>
+            </div>
+          </div>
+          <div class="col col-line">
+            <div class="responsive-svg-container line">
+              <div id="line_chart"></div>
+              <div id="tooltip-linechart"></div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row2">
+          <div class="col col-stacked">
+            <div class="responsive-svg-container stacked-chart">
+              <div id="stacked_bar"></div>
+              <div id="tooltip-stacked-bar"></div>
+            </div>
+          </div>
+          <div class="col col-bar">
+            <div class="responsive-svg-container bar-chart">
+              <div id="bar-chart"></div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row3">
+          <div id="svganchor" class="map-container" style="width:100%; height:120%; margin:0 auto;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Banh Mi Ram Ram | Anne and Melvin | Data source: <a href="https://www.bitre.gov.au/publications/2024/road-safety-enforcement-data">Australian Government Open Data</a></p>
+  </footer>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<!-- Page navigation and logic -->
+  <script defer src="js/script.js"></script>
+
+  <!-- Chart drawing scripts -->
+  <script defer src="js/line-chart.js"></script>
+  <script defer src="js/stacked-bar.js"></script>
+  <script defer src="js/map.js"></script>
+  <script defer src="js/card.js"></script>
+  <script defer src="js/bar.js"></script>
+
+  <!-- Filters (before data loaders) -->
+  <script defer src="js/filter.js"></script>
+
+  <!-- Data loader scripts -->
+  <script defer src="js/load-linechart-data.js"></script>
+  <script defer src="js/load-stacked-bar-data.js"></script>   
+  <script defer src="js/load-map-data.js"></script>
+  <script defer src="js/load-card-data.js"></script>
+  <script defer src="js/load-bar-data.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Make the page take full height */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full height */
+  background-color: #ffffff;
+  color: #111a19;
+  font-family: "Georgia", serif;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fddfa3;
+  padding: 10px 20px;
+  flex-wrap: wrap; /* Makes navbar responsive */
+  width: 100%;
+}
+
+/* Logo */
+.navbar img {
+  margin-left: 20px;
+  width: 60px;
+  height: auto;
+  cursor: pointer; /* Mouse over effect */
+}
+
+/* Navigation links */
+.nav-links {
+  flex-grow: 1;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  justify-content: right;
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+  font-family: "Georgia", serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111a19;
+  font-weight: bold;
+  padding: 8px 15px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #c1d1b7;
+  opacity: 50%;
+  border-radius: 5px;
+}
+
+/* Active link */
+.nav-links a.active {
+  background-color: #c1d1b7;
+  border-radius: 5px;
+}
+
+/* Main content */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  text-align: center;
+  overflow-y: auto; /* Allows internal scrolling if content is too long */
+}
+
+/* Hide elements */
+.hidden {
+  display: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #fddfa3;
+  color: #111a19;
+  margin-top: auto; /* Push footer to the bottom */
+  width: 100%;
+}
+
+.hidden {
+  display: none !important;
+}

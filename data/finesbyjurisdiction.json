@@ -1,0 +1,25 @@
+[ {
+  "JURISDICTION" : "Australian Capital Territory",
+  "FINES" : 71961.0
+}, {
+  "JURISDICTION" : "New South Wales",
+  "FINES" : 881483.0
+}, {
+  "JURISDICTION" : "Northern Territory",
+  "FINES" : 43306.0
+}, {
+  "JURISDICTION" : "Queensland",
+  "FINES" : 860626.0
+}, {
+  "JURISDICTION" : "South Australia",
+  "FINES" : 203602.0
+}, {
+  "JURISDICTION" : "Tasmania",
+  "FINES" : 65040.0
+}, {
+  "JURISDICTION" : "Victoria",
+  "FINES" : 1302628.0
+}, {
+  "JURISDICTION" : "Western Australia",
+  "FINES" : 807487.0
+} ]
